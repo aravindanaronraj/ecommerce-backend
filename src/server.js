@@ -31,6 +31,7 @@ app.use(
 );
 
 app.use(express.json());
+
 app.use("/cart", cartRoutes);
 app.use("/orders", orderRoutes);
 app.use("/reviews", reviewRoutes);
