@@ -23,15 +23,15 @@ connectDB();
 const app = express();
 
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://ecommerce-frontend-81a3c213v-jeev-s-tech.vercel.app",
-    ],
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    process.env.FRONTEND_URL,
+  ],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
