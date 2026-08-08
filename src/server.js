@@ -25,7 +25,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://ecommerce-frontend-81a3c213v-jeev-s-tech.vercel.app",
+    ],
     credentials: true,
   })
 );
