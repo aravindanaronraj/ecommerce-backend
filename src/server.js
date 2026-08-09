@@ -23,15 +23,14 @@ connectDB();
 const app = express();
 
 
-const corsOptions = {
-  origin: [
-    "http://localhost:5173",
-    process.env.FRONTEND_URL,
-  ],
-  credentials: true,
-};
+const cors = require("cors");
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
